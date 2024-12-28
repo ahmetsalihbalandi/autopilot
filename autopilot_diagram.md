@@ -1,3 +1,4 @@
+```mermaid
 ---
 config:
   theme: neo-dark
@@ -32,3 +33,4 @@ flowchart TD
     sMotors --- STM & STM
 classDef footer fill:none,stroke:none,color:#000, font-style:italic;
 footer["Ahmet Salih Balandi - Argeon Team"]
+```
