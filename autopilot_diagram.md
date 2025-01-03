@@ -18,8 +18,10 @@ flowchart TD
  subgraph s3["Aktüatörler"]
         Motors["BLDC Motorlar"]
         sMotors["Servo Motorlar"]
+	teker["Tekerlekler"]
+	lineer["Lineer Aktüatör"]
   end
-    Motors -- PWM --- Drivers["BLDC Motor Sürücüleri"] & Drivers & Drivers & Drivers & Drivers
+    lineer & teker --- Motors -- PWM --- Drivers["BLDC Motor Sürücüleri"] & Drivers & Drivers & Drivers & Drivers
     Drivers -- UART --- STM & STM & STM & STM & STM
     LIDAR -- UART --- STM
     IMU -- UART --- STM
