@@ -20,7 +20,7 @@ flowchart TD
         sMotors["Servo Motorlar"]
 	teker["Tekerlekler"]
   end
-    lineer & teker --- Motors -- PWM --- Drivers["BLDC Motor Sürücüleri"] & Drivers & Drivers & Drivers & Drivers
+    teker --- Motors -- PWM --- Drivers["BLDC Motor Sürücüleri"] & Drivers & Drivers & Drivers & Drivers
     Drivers -- UART --- STM & STM & STM & STM & STM
     LIDAR -- UART --- STM
     IMU -- UART --- STM
