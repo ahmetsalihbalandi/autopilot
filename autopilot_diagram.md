@@ -27,6 +27,7 @@ flowchart TD
     IMU -- UART --- STM
     Baro -- UART --- STM
     Telemetry -- UART --- STM
+    GPS -- UART --- STM
     Camera -- MIPI CSI --- Jetson_Nano
     STM -- UART --- Jetson_Nano
     Battery["Battery"] --- Regulator1["Regülatör 1"] & Regulator2["Regülatör 2"]
