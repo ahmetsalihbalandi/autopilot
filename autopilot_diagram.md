@@ -19,7 +19,6 @@ flowchart TD
         Motors["BLDC Motorlar"]
         sMotors["Servo Motorlar"]
 	teker["Tekerlekler"]
-	lineer["Lineer Aktüatör"]
   end
     lineer & teker --- Motors -- PWM --- Drivers["BLDC Motor Sürücüleri"] & Drivers & Drivers & Drivers & Drivers
     Drivers -- UART --- STM & STM & STM & STM & STM
