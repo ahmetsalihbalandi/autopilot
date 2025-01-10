@@ -21,8 +21,8 @@ flowchart TD
 	teker["Tekerlekler"]
   end
     teker --- Motors -- PWM --- Drivers["BLDC Motor Sürücüleri"] & Drivers & Drivers & Drivers
-    Battery -- Distributor
-    Drivers -- Distributor["Distributor"] & Distributor & Distributor & Distributor & Distributor
+    Battery -- Distributor["Distributor"]
+    Drivers -- Distributor & Distributor & Distributor & Distributor & Distributor
     Drivers -- UART --- STM & STM & STM & STM
     LIDAR -- UART --- STM
     IMU -- UART --- STM
