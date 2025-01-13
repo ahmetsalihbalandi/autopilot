@@ -5,7 +5,7 @@ config:
 ---
 flowchart TD
  subgraph s1["Mikrokontrolörler"]
-        Jetson_Nano["NVİDİA Jetson Nano"]
+        Jetson_Nano["NVIDIA Jetson Nano"]
         STM["STM32F411CEU6 BlackPill"]
   end
  subgraph s2["Algılayıcılar"]
