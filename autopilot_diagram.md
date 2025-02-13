@@ -12,8 +12,12 @@ flowchart TD
         IMU["IMU Sensor"]
         Baro["Baro Sensor"]
         LIDAR["LIDAR Sensörü"]
-        Camera["Camera"]
-        Telemetry["Telemetry Module"]
+        Camera1["Ön Kamera"]
+	Camera2["Nişangah Kamerası"]
+	Camera3["Arka Kamera"]
+	Camera4["Sağ Kamera"]
+        Camera5["Sol Kamera"]
+        Telemetry["Telemetri"]
   end
  subgraph s3["Aktüatörler"]
         Motors["BLDC Motorlar"]
@@ -29,7 +33,7 @@ flowchart TD
     Baro -- UART --- STM
     Telemetry -- UART --- STM
     GPS -- UART --- STM
-    Camera -- MIPI CSI --- Jetson_Nano
+    Camera1 & Camera2 & Camera3 & Camera4 & Camera5 -- USB --- Jetson_Nano
     STM -- UART --- Jetson_Nano
     Battery["Battery"] --- Regulator1["Regülatör 1"] & Regulator2["Regülatör 2"]
     Regulator1 --- Jetson_Nano
