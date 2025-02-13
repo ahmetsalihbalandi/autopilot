@@ -32,7 +32,7 @@ flowchart TD
     IMU -- UART --- STM
     Baro -- UART --- STM
     Telemetry -- UART --- STM
-    RTK GPS -- UART --- STM
+    GPS["RTK GPS"] -- UART --- STM
     Camera1 & Camera2 & Camera3 & Camera4 & Camera5 -- USB --- Jetson_Nano
     STM -- UART --- Jetson_Nano
     Battery["Battery"] --- Regulator1["Regülatör 1"] & Regulator2["Regülatör 2"]
