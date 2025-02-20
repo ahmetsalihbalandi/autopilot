@@ -29,9 +29,9 @@ flowchart TD
     Distributor & Distributor & Distributor & Distributor & Distributor --- Drivers
     Drivers -- UART --- STM & STM & STM & STM
     LIDAR -- UART --- STM
-    IMU -- UART --- STM
-    Baro -- UART --- STM
-    Telemetry -- UART --- STM
+    IMU -- I2C --- STM
+    Baro -- I2C --- STM
+    Telemetry -- I2C --- STM
     GPS["RTK GPS"] -- UART --- STM
     Camera1 & Camera2 & Camera3 & Camera4 & Camera5 -- USB --- Jetson_Nano
     STM -- SPI --- Jetson_Nano
