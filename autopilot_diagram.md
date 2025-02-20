@@ -34,7 +34,7 @@ flowchart TD
     Telemetry -- UART --- STM
     GPS["RTK GPS"] -- UART --- STM
     Camera1 & Camera2 & Camera3 & Camera4 & Camera5 -- USB --- Jetson_Nano
-    STM -- UART --- Jetson_Nano
+    STM -- SPI --- Jetson_Nano
     Battery["Battery"] --- Regulator1["Regülatör 1"] & Regulator2["Regülatör 2"]
     Regulator1 --- Jetson_Nano
     Regulator2 --- STM
