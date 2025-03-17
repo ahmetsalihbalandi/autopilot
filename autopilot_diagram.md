@@ -1,4 +1,5 @@
-mermaid
+### ARGEON TEAM ELEKTRONİK DEVRE ŞEMASI
+```mermaid
 ---
 config:
   theme: dark
@@ -9,8 +10,6 @@ config:
     nodeBorder: "#FF5733"
 ---
 flowchart TD
-    A["ARGEON TEAM ELEKTRONİK DEVRE ŞEMASI"] ---| | Start
-
  subgraph s1["Mikrokontrolörler"]
         Jetson_Nano["NVIDIA Jetson Orin Nano"]
         STM["STM32F411CEU6 BlackPill"]
@@ -48,3 +47,6 @@ flowchart TD
     Distributor --- STM
     Distributor --- Far["Araç Farı (Sağ-Sol)"]
     sMotors --- STM & STM
+classDef footer fill:none,stroke:none,color:#000, font-style:italic;
+footer["ARGEON TEAM ELEKTRONİK DEVRE ŞEMASI"]
+```
