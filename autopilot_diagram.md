@@ -1,7 +1,7 @@
 ```mermaid
 ---
 config:
-  theme: neo-dark
+  theme: forest
 ---
 flowchart TD
  subgraph s1["Mikrokontrolörler"]
