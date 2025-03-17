@@ -2,6 +2,8 @@
 ---
 config:
   theme: neutral
+  themeVariables:
+    background: "#000000"
 ---
 flowchart TD
  subgraph s1["Mikrokontrolörler"]
