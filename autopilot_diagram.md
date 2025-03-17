@@ -25,7 +25,7 @@ flowchart TD
     Battery["Li-ion Batarya"] --- BMS["Batarya Yönetim Sistemi"]
     BMS["Batarya Yönetim Sistemi"] --- Distributor["Güç Dağıtım Kartı"]
     Distributor & Distributor & Distributor & Distributor & Distributor --- Drivers
-    Distributor --- Araç Havalandırma Fanı
+    Distributor --- Havalandırma["Araç Havalandırma Fanı"]
     Drivers -- UART --- STM & STM & STM & STM
     LIDAR -- UART --- STM
     IMU -- I2C --- STM
