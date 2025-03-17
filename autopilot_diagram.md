@@ -25,12 +25,13 @@ flowchart TD
     Battery["Li-ion Batarya"] --- BMS["Batarya Yönetim Sistemi"]
     BMS["Batarya Yönetim Sistemi"] --- Distributor["Güç Dağıtım Kartı"]
     Distributor & Distributor & Distributor & Distributor & Distributor --- Drivers
+    Distributor --- Araç Havalandırma Fanı
     Drivers -- UART --- STM & STM & STM & STM
     LIDAR -- UART --- STM
     IMU -- I2C --- STM
     Baro -- I2C --- STM
     Telemetry -- I2C --- STM
-    GPS["RTK GPS"] -- UART --- STM
+    GPS["RTK GPS"] -- CAN bus --- STM
     Camera1 & Camera1 -- USB --- Jetson_Nano
     Camera2 & Camera2 & Camera2 -- CSI --- Jetson_Nano
     STM -- SPI --- Jetson_Nano
