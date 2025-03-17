@@ -33,7 +33,7 @@ flowchart TD
     IMU -- I2C --- STM
     Baro -- I2C --- STM
     Telemetry -- I2C --- STM
-    GPS["RTK GPS"] -- CAN bus --- STM
+    GPS["RTK GPS"] -- CAN bus --- Jetson_Nano
     Camera1 & Camera1 -- USB --- Jetson_Nano
     Camera2 & Camera2 & Camera2 -- CSI --- Jetson_Nano
     STM -- SPI --- Jetson_Nano
