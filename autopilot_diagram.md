@@ -1,7 +1,7 @@
 ```mermaid
 ---
 config:
-  theme: base
+  theme: dark
   themeVariables:
     background: "#ffffff"
 ---
