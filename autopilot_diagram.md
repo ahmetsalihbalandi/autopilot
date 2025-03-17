@@ -17,16 +17,18 @@ flowchart TD
         Telemetry["Telemetri"]
   end
  subgraph s3["Aktüatörler"]
-        Motors["BLDC Motorlar"]
-        sMotors["Nişangah Pan-Tilt Servo Motorlar"]
-	teker["Tekerlekler"]
+        Motors["BLDC Teker Motorları"]
+        sMotors["Nişangah Pan-Tilt Servo Motorları"]
+	fMotor["Fren Diski Motoru"]
+	kMotor["Kapak Motoru"]
   end
-    teker --- Motors -- PWM --- Drivers["BLDC Motor Sürücüleri"] & Drivers & Drivers & Drivers
+    Motors --- Drivers["BLDC Motor Sürücüleri"] & Drivers & Drivers & Drivers
     Battery["Li-ion Batarya"] --- BMS["Batarya Yönetim Sistemi"]
     BMS["Batarya Yönetim Sistemi"] --- Distributor["Güç Dağıtım Kartı"]
     Distributor & Distributor & Distributor & Distributor & Distributor --- Drivers
+    Distributor --- kMotor & fMotor
     Distributor --- Havalandırma["Araç Havalandırma Fanı"]
-    Drivers -- UART --- STM & STM & STM & STM
+    Drivers -- PWM --- STM & STM & STM & STM
     LIDAR -- UART --- STM
     IMU -- I2C --- STM
     Baro -- I2C --- STM
