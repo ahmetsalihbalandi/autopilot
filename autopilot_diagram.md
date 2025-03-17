@@ -5,27 +5,25 @@ config:
 ---
 flowchart TD
  subgraph s1["Mikrokontrolörler"]
-        Jetson_Nano["NVIDIA Jetson Nano"]
+        Jetson_Nano["NVIDIA Jetson Orin Nano"]
         STM["STM32F411CEU6 BlackPill"]
   end
  subgraph s2["Algılayıcılar"]
         IMU["IMU Sensor"]
         Baro["Baro Sensor"]
         LIDAR["LIDAR Sensörü"]
-        Camera1["Ön Kamera"]
-	Camera2["Nişangah Kamerası"]
-	Camera3["Arka Kamera"]
-	Camera4["Sağ Kamera"]
-        Camera5["Sol Kamera"]
+        Camera1["Ön ve Arka Kameralar"]
+	Camera2["Nişangah, Sağ ve Sol Kameralar"]
         Telemetry["Telemetri"]
   end
  subgraph s3["Aktüatörler"]
         Motors["BLDC Motorlar"]
-        sMotors["Servo Motorlar"]
+        sMotors["Nişangah Pan-Tilt Servo Motorlar"]
 	teker["Tekerlekler"]
   end
     teker --- Motors -- PWM --- Drivers["BLDC Motor Sürücüleri"] & Drivers & Drivers & Drivers
-    Battery --- Distributor["Güç Dağıtım Kartı"]
+    Battery["Li-ion Batarya"] --- BMS["Batarya Yönetim Sistemi"]
+    BMS["Batarya Yönetim Sistemi"] --- Distributor["Güç Dağıtım Kartı"]
     Distributor & Distributor & Distributor & Distributor & Distributor --- Drivers
     Drivers -- UART --- STM & STM & STM & STM
     LIDAR -- UART --- STM
@@ -33,12 +31,13 @@ flowchart TD
     Baro -- I2C --- STM
     Telemetry -- I2C --- STM
     GPS["RTK GPS"] -- UART --- STM
-    Camera1 & Camera2 & Camera3 & Camera4 & Camera5 -- USB --- Jetson_Nano
+    Camera1 & Camera1 -- USB --- Jetson_Nano
+    Camera2 & Camera2 & Camera2 -- CSI --- Jetson_Nano
     STM -- SPI --- Jetson_Nano
-    Battery["Battery"] --- Regulator1["Regülatör 1"] & Regulator2["Regülatör 2"]
-    Regulator1 --- Jetson_Nano
-    Regulator2 --- STM
+    Distributor --- Jetson_Nano
+    Distributor --- STM
+    Distributor --- Far["Araç Farı (Sağ-Sol)"]
     sMotors --- STM & STM
 classDef footer fill:none,stroke:none,color:#000, font-style:italic;
-footer["Ahmet Salih Balandi - Argeon Team"]
+footer["Argeon Team"]
 ```
