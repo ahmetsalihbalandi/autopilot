@@ -3,7 +3,10 @@
 config:
   theme: dark
   themeVariables:
-    background: "#ffffff"
+    background: "#1E3A8A"
+    primaryColor: "#FFFFFF"
+    primaryTextColor: "#000000"
+    nodeBorder: "#FF5733"
 ---
 flowchart TD
  subgraph s1["Mikrokontrolörler"]
